@@ -1,0 +1,138 @@
+.contentGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  background: #000000;
+}
+
+@media (max-width: 1200px) {
+  .contentGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .contentGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .contentGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    min-height: 260px;
+    padding: 10px 4px 16px 4px;
+  }
+  .cardImage {
+    height: 160px;
+  }
+  .cardTitle {
+    font-size: 0.95rem;
+  }
+  .cardCreator {
+    font-size: 0.78rem;
+  }
+  .cardRightBottom {
+    font-size: 0.95rem;
+    min-width: 60px;
+  }
+  .cardInfoBottom {
+    padding-top: 8px;
+  }
+}
+
+.card {
+  border: none;
+  border-radius: 12px;
+  padding: 20px 16px 28px 16px;
+  background: #18181c;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-height: 400px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  overflow: hidden;
+}
+
+.cardImage {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  border-radius: 8px;
+  background: #222;
+  margin-bottom: 0;
+  display: block;
+  transition: transform 0.35s;
+}
+
+.card:hover .cardImage {
+  transform: scale(1.08);
+}
+
+.cardRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.cardLeft {
+  text-align: left;
+}
+
+.cardTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 2px;
+  line-height: 1.1;
+}
+
+.cardCreator {
+  font-size: 0.85rem;
+  color: #aaa;
+  margin-bottom: 0;
+  line-height: 1.1;
+}
+
+.cardRight {
+  text-align: right;
+  color: #61dafb;
+  font-size: 1.05rem;
+  font-weight: 500;
+  min-width: 90px;
+}
+
+.cardInfoBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  margin-top: auto;
+  padding-top: 16px;
+}
+
+.cardInfoLeftBottom {
+  text-align: left;
+}
+
+.cardRightBottom {
+  text-align: right;
+  color: #61dafb;
+  font-size: 1.05rem;
+  font-weight: 500;
+  min-width: 90px;
+}
+
+.cardPricingOption {
+  display: block;
+  font-size: 0.85rem;
+  color: #61dafb;
+  margin-top: 2px;
+  font-weight: 500;
+} 

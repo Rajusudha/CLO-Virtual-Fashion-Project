@@ -1,0 +1,75 @@
+.searchBarContainer {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto 16px auto;
+  background: #1E1E23;
+  border-radius: 8px;
+  border: none;
+  box-shadow: 0 2px 8px rgba(60, 60, 60, 0.06);
+  padding: 6px 16px;
+  position: relative;
+  transition: box-shadow 0.2s;
+}
+
+.searchBarContainer:focus-within {
+  box-shadow: 0 4px 16px rgba(60, 60, 60, 0.12);
+  border-color: #a0a0ff;
+}
+
+.searchIcon {
+  margin-right: 10px;
+  color: #888;
+  flex-shrink: 0;
+}
+
+.searchIconRight {
+  margin-left: 10px;
+  color: #888;
+  flex-shrink: 0;
+  align-self: center;
+}
+
+.input {
+  padding: 10px 0;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 17px;
+  background: transparent;
+  color: #fff;
+}
+
+.clearButton {
+  position: absolute;
+  right: 12px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  transition: color 0.2s;
+}
+
+.clearButton:hover svg {
+  stroke: #ff4d4f;
+}
+
+@media (max-width: 600px) {
+  .searchBarContainer {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 6px 8px;
+    gap: 6px;
+  }
+  .searchIcon {
+    margin-right: 0;
+    margin-bottom: 6px;
+  }
+  .input {
+    font-size: 15px;
+    padding: 8px 0;
+  }
+} 
