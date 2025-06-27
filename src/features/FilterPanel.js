@@ -25,8 +25,6 @@ const FilterPanel = () => {
     dispatch(resetFilters());
   };
 
-  const checkedCount = FILTERS.filter(({ key }) => filters[key]).length;
-
   // Mobile drawer toggle
   const handleToggle = () => setMobileOpen((open) => !open);
 
