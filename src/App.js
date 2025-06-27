@@ -7,12 +7,15 @@ import ContentList from './features/ContentList';
 const App = React.memo(function App() {
   return (
     <div className="App-container">
-      <header className="App-header-sticky">
+      <header className="App-header-sticky" style={{height:"100px", backgroundColor:"#000000"}}>
         <SearchBar />
         <FilterPanel />
+        
       </header>
-      <main>
-        <ContentList />
+      <main style={{width:"100%", margin: "50px auto",  background: "#000000"}}>
+        {/* <div style={{marginTop: '100px', width:"100%"}}> */}
+          <ContentList />
+        {/* </div> */}
       </main>
     </div>
   );

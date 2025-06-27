@@ -26,7 +26,18 @@ const FilterPanel = () => {
   return (
     <>
       <div style={{ color: '#629980', margin: '0 0 8px 40px', fontWeight: 500, display: 'flex', alignItems: 'center', gap: 6 }}>
-        {checkedCount > 0 ? `${checkedCount} ` : ''}Contents Filter
+        {checkedCount > 0 ? (
+          <span style={{
+            color: '#53A479',
+            // background: '#53A479',
+            fontWeight: 600,
+            // marginRight: 6,
+            // borderRadius: '16px',
+            padding: '2px ',
+            // display: 'inline-block',
+            fontSize: '1rem',
+          }}>{checkedCount}</span>
+        ) : ''}Contents Filter
       </div>
       <div className={styles.filterPanelContainer}>
         <span style={{ color: '#5C5C63', fontWeight: 600, marginRight: 12, fontSize: '14px' }}>Pricing Option</span>

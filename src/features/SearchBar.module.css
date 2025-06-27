@@ -2,14 +2,16 @@
   display: flex;
   align-items: center;
   width: 90%;
-  margin: 0 auto 16px auto;
+  margin: -60px auto 0px auto;
   background: #1E1E23;
   border-radius: 8px;
   border: none;
   box-shadow: 0 2px 8px rgba(60, 60, 60, 0.06);
-  padding: 6px 16px;
+  padding: 2px 8px;
   position: relative;
   transition: box-shadow 0.2s;
+  min-height: 32px;
+  /* margin-top: 20px; */
 }
 
 .searchBarContainer:focus-within {
@@ -28,6 +30,15 @@
   color: #888;
   flex-shrink: 0;
   align-self: center;
+}
+
+.searchIconLeft {
+  position: absolute;
+  left: 900px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+  z-index: 2;
 }
 
 .input {
@@ -72,4 +83,33 @@
     font-size: 15px;
     padding: 8px 0;
   }
+}
+
+.suggestionList {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #23232b;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 4px 16px rgba(60,60,60,0.18);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  z-index: 20;
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+.suggestionItem {
+  padding: 10px 16px;
+  color: #b7e3c6;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background 0.18s;
+}
+
+.suggestionItem:hover {
+  background: #2a2a33;
+  color: #61dafb;
 } 

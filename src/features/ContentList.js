@@ -58,13 +58,37 @@ const ContentList = () => {
 
   const filteredItems = getFilteredItems(items, filters, searchTerm);
 
+  // Show count and keyword search text
+  const showKeywordSearch = searchTerm && searchTerm.trim().length > 0;
+
   return (
-    <div className={styles.contentGrid} >
-      {filteredItems.map((item, idx) => {
-        const key = `${item.id}-${idx}`;
-        if (filteredItems.length === idx + 1) {
+    <>
+      {showKeywordSearch && (
+        <div style={{color:'#53A479', fontWeight:600, margin:'12px 0 8px 0', fontSize:'1.1rem', textAlign:'left'}}>
+          Keyword Search: <span style={{color:'#fff', fontWeight:400}}>{filteredItems.length} item{filteredItems.length !== 1 ? 's' : ''} found</span>
+        </div>
+      )}
+      <div className={styles.contentGrid} >
+        {filteredItems.map((item, idx) => {
+          const key = `${item.id}-${idx}`;
+          if (filteredItems.length === idx + 1) {
+            return (
+              <div ref={lastItemRef} key={key} className={styles.card}>
+                <img src={item.imageUrl} alt={item.title} className={styles.cardImage} />
+                <div className={styles.cardInfoBottom}>
+                  <div className={styles.cardInfoLeftBottom}>
+                    <h3 className={styles.cardTitle}>{item.title}</h3>
+                    <p className={styles.cardCreator}>{item.userName}</p>
+                  </div>
+                  <div className={styles.cardRightBottom}>
+                    <span>{item.pricingOption === 'Paid' && item.price ? `$${item.price}` : item.pricingOption === 'Free' ? 'Free' : item.pricingOption === 'View Only' ? 'View Only' : ''}</span>
+                  </div>
+                </div>
+              </div>
+            );
+          }
           return (
-            <div ref={lastItemRef} key={key} className={styles.card}>
+            <div key={key} className={styles.card} >
               <img src={item.imageUrl} alt={item.title} className={styles.cardImage} />
               <div className={styles.cardInfoBottom}>
                 <div className={styles.cardInfoLeftBottom}>
@@ -77,24 +101,10 @@ const ContentList = () => {
               </div>
             </div>
           );
-        }
-        return (
-          <div key={key} className={styles.card} >
-            <img src={item.imageUrl} alt={item.title} className={styles.cardImage} />
-            <div className={styles.cardInfoBottom}>
-              <div className={styles.cardInfoLeftBottom}>
-                <h3 className={styles.cardTitle}>{item.title}</h3>
-                <p className={styles.cardCreator}>{item.userName}</p>
-              </div>
-              <div className={styles.cardRightBottom}>
-                <span>{item.pricingOption === 'Paid' && item.price ? `$${item.price}` : item.pricingOption === 'Free' ? 'Free' : item.pricingOption === 'View Only' ? 'View Only' : ''}</span>
-              </div>
-            </div>
-          </div>
-        );
-      })}
-      {loading && Array.from({ length: 4 }).map((_, i) => <Skeleton key={i} />)}
-    </div>
+        })}
+        {loading && Array.from({ length: 4 }).map((_, i) => <Skeleton key={i} />)}
+      </div>
+    </>
   );
 };
 
