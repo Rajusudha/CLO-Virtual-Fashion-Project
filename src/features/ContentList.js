@@ -58,9 +58,6 @@ const ContentList = () => {
 
   const filteredItems = getFilteredItems(items, filters, searchTerm);
 
-  // Show count and keyword search text
-  const showKeywordSearch = searchTerm && searchTerm.trim().length > 0;
-
   return (
     <>
       <div className={styles.contentsListHeading} style={{marginTop:"40px",fontWeight:"500" }}>Contents List</div>
