@@ -32,7 +32,7 @@ const Skeleton = () => (
 
 const ContentList = () => {
   const dispatch = useDispatch();
-  const { items, loading, hasMore, page } = useSelector((state) => state.content);
+  const { items, loading, hasMore } = useSelector((state) => state.content);
   const filters = useSelector((state) => state.filters);
   const searchTerm = useSelector((state) => state.search.term);
   const observer = useRef();
