@@ -13,7 +13,7 @@ const SearchBar = () => {
 
   const handleClear = () => {
     dispatch(setSearchTerm(''));
-  };git
+  };
 
   return (
     <div className={styles.searchBarContainer} style={{position:'relative',marginTop:"20px"}}>
