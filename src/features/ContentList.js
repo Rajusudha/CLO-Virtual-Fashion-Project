@@ -63,12 +63,18 @@ const ContentList = () => {
 
   return (
     <>
-      {showKeywordSearch && (
-        <div style={{color:'#53A479', fontWeight:600, margin:'12px 0 8px 0', fontSize:'1.1rem', textAlign:'left'}}>
-          Keyword Search: <span style={{color:'#fff', fontWeight:400}}>{filteredItems.length} item{filteredItems.length !== 1 ? 's' : ''} found</span>
-        </div>
-      )}
-      <div className={styles.contentGrid} >
+      <div className={styles.contentsListHeading} style={{marginTop:"40px",fontWeight:"500" }}>Contents List</div>
+      <div className={styles.contentGrid} style={{position:'relative', minHeight:'300px'}} >
+        {(!loading && searchTerm && filteredItems.length === 0) && (
+          <div style={{position:'absolute', top:0, left:0, width:'100%', height:'100%', display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', gap:'16px', zIndex:2, background:'transparent', padding:'0 8px'}}>
+            <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" style={{marginBottom:'8px'}}>
+              <circle cx="26" cy="26" r="18" stroke="#888" strokeWidth="3" />
+              <line x1="41" y1="41" x2="54" y2="54" stroke="#888" strokeWidth="3" strokeLinecap="round" />
+            </svg>
+            <div style={{fontSize:'1.1rem', fontWeight:600, color:'#fff', textAlign:'center'}}>No Results Found</div>
+            <div style={{fontSize:'0.95rem', color:'#aaa', textAlign:'center'}}>Check the spelling, or try a different search term.</div>
+          </div>
+        )}
         {filteredItems.map((item, idx) => {
           const key = `${item.id}-${idx}`;
           if (filteredItems.length === idx + 1) {

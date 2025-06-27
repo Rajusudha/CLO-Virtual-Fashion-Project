@@ -16,7 +16,7 @@ const SearchBar = () => {
   };
 
   return (
-    <div className={styles.searchBarContainer} style={{position:'relative'}}>
+    <div className={styles.searchBarContainer} style={{position:'relative',marginTop:"20px"}}>
       <input
         type="text"
         placeholder="Find the items you're looking for"

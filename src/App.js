@@ -12,7 +12,7 @@ const App = React.memo(function App() {
         <FilterPanel />
         
       </header>
-      <main style={{width:"100%", margin: "50px auto",  background: "#000000"}}>
+      <main style={{width:"100%", margin: "50px auto",  background: "#000000",marginTop:"6px"}}>
         {/* <div style={{marginTop: '100px', width:"100%"}}> */}
           <ContentList />
         {/* </div> */}

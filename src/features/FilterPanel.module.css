@@ -2,7 +2,7 @@
   background: transparent;
   border-radius: 8px;
   padding: 4px 12px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   display: flex;
   align-items: center;
   gap: 20px;
@@ -11,6 +11,7 @@
   width: 90%;
   margin-left: auto;
   margin-right: auto;
+  /* margin-top: 20px; */
   border: 2px solid #629980;
   min-height: 36px;
 }
@@ -66,5 +67,136 @@
     width: 100%;
     font-size: 14px;
     padding: 8px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .filterPanelContainer {
+    padding: 8px 4px;
+    gap: 6px;
+    min-height: 28px;
+  }
+  .checkboxLabel {
+    font-size: 16px;
+    padding: 6px 0;
+    gap: 10px;
+  }
+  .checkboxInput {
+    width: 22px;
+    height: 22px;
+  }
+  .resetButton {
+    font-size: 13px;
+    padding: 8px 0;
+  }
+}
+
+/* 4K - 2560px */
+@media (max-width: 2560px) {
+  .filterPanelContainer {
+    max-width: 1800px;
+    font-size: 1.2rem;
+  }
+  .checkboxLabel {
+    font-size: 20px;
+  }
+  .checkboxInput {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+/* Laptop L - 1440px */
+@media (max-width: 1440px) {
+  .filterPanelContainer {
+    max-width: 1200px;
+    font-size: 1.1rem;
+  }
+  .checkboxLabel {
+    font-size: 18px;
+  }
+  .checkboxInput {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Laptop - 1024px */
+@media (max-width: 1024px) {
+  .filterPanelContainer {
+    max-width: 900px;
+    font-size: 1rem;
+  }
+  .checkboxLabel {
+    font-size: 17px;
+  }
+  .checkboxInput {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Tablet - 768px */
+@media (max-width: 768px) {
+  .filterPanelContainer {
+    max-width: 98vw;
+    font-size: 0.98rem;
+  }
+  .checkboxLabel {
+    font-size: 16px;
+  }
+  .checkboxInput {
+    width: 17px;
+    height: 17px;
+  }
+}
+
+/* Mobile L - 425px */
+@media (max-width: 425px) {
+  .filterPanelContainer {
+    max-width: 99vw;
+    font-size: 0.97rem;
+    padding: 6px 2px;
+  }
+  .checkboxLabel {
+    font-size: 15px;
+  }
+  .checkboxInput {
+    width: 16px;
+    height: 16px;
+  }
+  .resetButton {
+    font-size: 13px;
+    padding: 8px 0;
+  }
+}
+
+/* Mobile M - 375px */
+@media (max-width: 375px) {
+  .filterPanelContainer {
+    font-size: 0.95rem;
+    padding: 4px 1px;
+  }
+  .checkboxLabel {
+    font-size: 14px;
+  }
+  .checkboxInput {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+/* Mobile S - 320px */
+@media (max-width: 320px) {
+  .filterPanelContainer {
+    font-size: 0.92rem;
+    padding: 2px 0;
+  }
+  .checkboxLabel {
+    font-size: 13px;
+  }
+  .checkboxInput {
+    width: 14px;
+    height: 14px;
   }
 } 
